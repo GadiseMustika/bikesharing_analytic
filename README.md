@@ -10,3 +10,22 @@ Tujuan ini menganalisa berdasarkan:
  - Analisa penyewaan harian yang berdasarkan hari dan waktu penyewaan sepeda melonjak padat
 Analisa ini menggunakan metode *Clustering Analytics*.Pada analisa ini akan mengelompokkan trend bulanan dan jadwal penggunaan berdasarkan pengguna casual(Biasa) & registered(Member)
 
+# Running Dashboard✨
+
+### 1. Setup Enviroment - Command Prompt / Powershell
+```
+mkdir projek_analisis
+cd projek_analisis
+python -m venv .venv
+.\.venv\Scripts\activate # active .venv
+
+```
+### 2. Install Libary 
+```
+pip install numpy
+pip install matplotlib
+pip install seaborn
+pip install pip freeze #or pip install pip reqs
+pip install streamlit
+```
+

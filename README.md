@@ -16,8 +16,10 @@ Analisa ini menggunakan metode *Clustering Analytics*.Pada analisa ini akan meng
 ```
 mkdir projek_analisis
 cd projek_analisis
--- clone file optional,your can downloading from repo
+
+-- clone file optional,your can downloading from repo--
 git clone https://github.com/GadiseMustika/bikesharing_analytic.git
+
 python -m venv .venv
 .\.venv\Scripts\activate # active .venv
 ```
@@ -29,12 +31,21 @@ pip install seaborn
 pip install pip freeze or pip install pip reqs
 pip install streamlit
 ```
-### 3 Making Requirement
+***Note: Jangan lupa run file Notebook.ipynb, untuk memastikan file berjalan dengan lancar***
+
+### 3. Making Requirement
 ```
 pip freeze > requirement.txt
 -- or --
-
 pipreqs . --force
 ```
+### 4. Run Streamlit 
+```
+cd dashboard 
+streamlit run dashboard.py
 
+```
+***Akan diberikan akses server lokal dan Network***
+- Local : http://localhost:8501
+- Network : http://192.168.1.8:8501
 

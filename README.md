@@ -16,16 +16,25 @@ Analisa ini menggunakan metode *Clustering Analytics*.Pada analisa ini akan meng
 ```
 mkdir projek_analisis
 cd projek_analisis
+-- clone file optional,your can downloading from repo
+git clone https://github.com/GadiseMustika/bikesharing_analytic.git
 python -m venv .venv
 .\.venv\Scripts\activate # active .venv
-
 ```
 ### 2. Install Libary 
 ```
 pip install numpy
 pip install matplotlib
 pip install seaborn
-pip install pip freeze #or pip install pip reqs
+pip install pip freeze or pip install pip reqs
 pip install streamlit
 ```
+### 3 Making Requirement
+```
+pip freeze > requirement.txt
+-- or --
+
+pipreqs . --force
+```
+
 

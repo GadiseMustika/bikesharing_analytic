@@ -88,8 +88,8 @@ def create_rentSchedule_by_registered(df):
 
 
 # load berkas file csv
-days_df = pd.read_csv('dashboard/main_days.csv')
-hours_df = pd.read_csv('dashboard/main_hours.csv')
+days_df = pd.read_csv('main_days.csv')
+hours_df = pd.read_csv('main_hours.csv')
 
 
 # Panggil helper function

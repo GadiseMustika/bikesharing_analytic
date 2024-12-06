@@ -16,7 +16,9 @@ days_df["datetime"] = pd.to_datetime(days_df["datetime"])
 # all users
 def create_monthly_trend(df):
     monthly_trend_df = df.groupby(by=["year", "month"]).agg({
-        'rent_count': 'mean'
+        'rent_count': 'mean',
+        'casual' : 'mean',
+        'registered' : 'mean'
     })
     ordered_months = [
         'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',

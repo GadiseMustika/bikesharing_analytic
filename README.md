@@ -11,6 +11,16 @@ Tujuan ini menganalisa berdasarkan:
 Analisa ini menggunakan metode *Clustering Analytics*.Pada analisa ini akan mengelompokkan trend bulanan dan jadwal penggunaan berdasarkan pengguna casual(Biasa) & registered(Member)
 
 # Running Dashboard✨
+### Depedencies Version
+```
+pip 24. 3.1
+matplotlib==3.9.3
+numpy==2.1.3
+pandas==2.2.3
+seaborn==0.13.2
+streamlit==1.39.0
+
+```
 
 ### 1. Setup Enviroment - Command Prompt / Powershell
 ```
@@ -35,8 +45,7 @@ pip install streamlit
 
 ### 3. Making Requirement
 ```
-pip freeze > requirement.txt
--- or --
+pip install pipreqs
 pipreqs . --force
 ```
 ### 4. Run Streamlit 

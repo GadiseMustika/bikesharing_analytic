@@ -11,7 +11,7 @@ import streamlit as st # type: ignore
 
 # all users
 def create_monthly_trend(df):
-    monthly_trend_df = df.groupby(by=["year", "month"]).agg({
+    monthly_trend_df = df.groupby(by=["month", "year"]).agg({
         'rent_count': 'mean',
     })
     ordered_months = [
@@ -194,9 +194,9 @@ sns.lineplot(
     ax=ax
 )
 
-sns.lineplot(x='month', y='casual', hue='year', data=main_df, marker='o',  palette={2011: "navy", 2012: "lightblue"})
+sns.lineplot(x='month', y='casual', hue='year', data=main_df, marker='o',  palette={2011: "navy", 2012: "lightblue"}, ax=ax)
 
-sns.lineplot(x='month', y='registered', hue='year', data=main_df, marker='o', palette={2011: "darkgreen", 2012: "limegreen"})
+sns.lineplot(x='month', y='registered', hue='year', data=main_df, marker='o', palette={2011: "darkgreen", 2012: "limegreen"}, ax=ax)
 
 ax.set_xlabel('Month')
 ax.set_ylabel('Rent Total')

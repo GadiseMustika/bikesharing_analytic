@@ -5,14 +5,14 @@ import seaborn as sns # type: ignore
 import streamlit as st # type: ignore
 
 # Helper function
+
+
 # Trend penyewaan bulanan 
 
 # all users
 def create_monthly_trend(df):
     monthly_trend_df = df.groupby(by=["year", "month"]).agg({
         'rent_count': 'mean',
-        'casual' : 'mean',
-        'registered' : 'mean'
     })
     ordered_months = [
         'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
@@ -20,6 +20,28 @@ def create_monthly_trend(df):
     ]
     monthly_trend_df = monthly_trend_df.reindex(ordered_months, fill_value=0)
     return monthly_trend_df
+
+def create_monthly_trend_byCasual(df):
+    monthly_trend_byCasual_df = df.groupby(by=["year", "month"]).agg({
+        'casual': 'mean',
+    })
+    ordered_months = [
+        'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
+        'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'
+    ]
+    monthly_trend_byCasual_df = monthly_trend_byCasual_df.reindex(ordered_months, fill_value=0)
+    return monthly_trend_byCasual_df
+
+def create_monthly_trend_byRegistered(df):
+    monthly_trend_byRegistered_df = df.groupby(by=["year", "month"]).agg({
+        'casual': 'mean',
+    })
+    ordered_months = [
+        'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
+        'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'
+    ]
+    monthly_trend_byRegistered_df = monthly_trend_byRegistered_df.reindex(ordered_months, fill_value=0)
+    return monthly_trend_byRegistered_df
 
 # Jumlah penyewaan sepeda berdasarkan musim dan cuaca
 def create_seasonal(df):
@@ -122,11 +144,15 @@ with st.sidebar:
     )
     
 
+main_df = days_df[(days_df['datetime'] >= str(start_date)) & 
+                (days_df['datetime'] <= str(end_date))]
 
 
 
 # Panggil helper function
 monthly_trend_df = create_monthly_trend(main_df)
+monthly_trend_byCasual_df = create_monthly_trend_byCasual(main_df)
+monthly_trend_byRegistered_df = create_monthly_trend_byRegistered(main_df)
 seasonal_df = create_seasonal(main_df)
 weathersituation_df = create_weathersituation(main_df)
 temperature_df = create_temperature(hours_df)

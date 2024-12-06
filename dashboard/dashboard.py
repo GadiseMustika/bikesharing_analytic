@@ -5,12 +5,6 @@ import seaborn as sns # type: ignore
 import streamlit as st # type: ignore
 
 # Helper function
-# load berkas file csv
-days_df = pd.read_csv('main_days.csv')
-hours_df = pd.read_csv('main_hours.csv')
-
-days_df["datetime"] = pd.to_datetime(days_df["datetime"])
-
 # Trend penyewaan bulanan 
 
 # all users
@@ -93,7 +87,11 @@ def create_rentSchedule_by_registered(df):
 
     return rentSchedule_by_registered_df
 
+# load berkas file csv
+days_df = pd.read_csv('main_days.csv')
+hours_df = pd.read_csv('main_hours.csv')
 
+days_df["datetime"] = pd.to_datetime(days_df["datetime"])
 
 # Membuat sidebar filter pada trend monthly
 min_date = pd.to_datetime(days_df['datetime']).dt.date.min()
@@ -124,8 +122,6 @@ with st.sidebar:
     )
     
 
-main_df = days_df[(days_df['datetime'] >= str(start_date)) & 
-                (days_df['datetime'] <= str(end_date))]
 
 
 

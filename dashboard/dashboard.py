@@ -110,8 +110,8 @@ def create_rentSchedule_by_registered(df):
     return rentSchedule_by_registered_df
 
 # load berkas file csv
-days_df = pd.read_csv(r.'\\dashboard\\main_days.csv')
-hours_df = pd.read_csv(r.'\\dashboard\\main_hours.csv')
+days_df = pd.read_csv(r'main_days.csv')
+hours_df = pd.read_csv(r'main_hours.csv')
 
 days_df["datetime"] = pd.to_datetime(days_df["datetime"])
 

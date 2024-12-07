@@ -111,15 +111,13 @@ def create_rentSchedule_by_registered(df):
 
 # load berkas file csv
 
-days_upload = st.file_uploader(
-    "./main_days.csv", accept_multiple_files=False)
+days_upload = pd.read_csv('./main_days.csv')
 if days_upload is not None:
     days_df = days_upload
 else:
     days_df = "./main_days.csv"
 
-hours_upload = st.file_uploader(
-    "./main_hours.csv", accept_multiple_files=False)
+hours_upload = pd.read_csv('./main_hours.csv')
 if hours_upload is not None:
     hours_df = hours_upload
 else:

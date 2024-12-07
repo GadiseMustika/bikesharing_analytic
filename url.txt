@@ -1,2 +1,1 @@
 Url akses dashboard:
-https://dico-bikeshare.streamlit.app/

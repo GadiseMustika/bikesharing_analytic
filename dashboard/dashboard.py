@@ -3,6 +3,7 @@ import pandas as pd # type: ignore
 import matplotlib.pyplot as plt # type: ignore
 import seaborn as sns # type: ignore
 import streamlit as st # type: ignore
+import os
 
 # Helper function
 
@@ -110,20 +111,8 @@ def create_rentSchedule_by_registered(df):
     return rentSchedule_by_registered_df
 
 # load berkas file csv
-
-days_upload = pd.read_csv('days.csv')
-if days_upload is not None:
-    days_df = days_upload
-else:
-    days_df = "main_days.csv"
-
-hours_upload = pd.read_csv('hours.csv')
-if hours_upload is not None:
-    hours_df = hours_upload
-else:
-    hours_df = "./main_hours.csv"
-# days_df = pd.read_csv('./main_days.csv')
-# hours_df = pd.read_csv('./main_hours.csv')
+days_df = pd.read_csv('./main_days.csv')
+hours_df = pd.read_csv('./main_hours.csv')
 
 days_df["datetime"] = pd.to_datetime(days_df["datetime"])
 
